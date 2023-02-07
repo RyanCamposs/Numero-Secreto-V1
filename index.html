@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero Secreto</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: rgb(39, 131, 131);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            box-shadow:2px 6px rgba(0, 0, 0, 0.445);
+            text-align: center;
+            
+        }
+        footer {
+            padding-top: 20px
+        }
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Numero Secreto</h1>
+    <input type="number" name="numeros" id="numeroS">
+    <input type="button" value="Verificar" onclick="tentar()">
+    <div id="res"></div>
+    <div id="imagem"><img src="" alt="" id="img"></div>
+
+
+    <footer>@RyanCampos</footer>
+    <script>
+        function tentar() {
+            var numeroS = window.document.getElementById ('numeroS')
+            var ns = Number(numeroS.value)
+            var res = window.document.getElementById ('res')
+            var img = window.document.getElementById ('img')
+
+
+
+            if (ns == 30) {
+                res.innerHTML = `<p>Você acertou o numero secreto</p>`
+                window.document.body.style.background = '#42393b'
+                img.src = 'meme.jpg'
+            }else if (ns > 30) {
+                res.innerHTML = `<p>O numero secreto é <strong>menor!</strong></p>`
+
+            }else if (ns < 30) {
+                res.innerHTML = `<p>O numero secreto é <strong>maior!</strong></p>`
+            }
+            else{
+               res.innerHTML =+ `<p>Você errou!<p>`
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
