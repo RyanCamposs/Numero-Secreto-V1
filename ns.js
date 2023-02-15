@@ -1,29 +1,29 @@
-let tentativas = 0;
-const limiteTentativas = 20;
-let mensagem = "";
+let tentativas = 0; // variavel tentativas
+const limiteTentativas = 20; // variavel com os limites das tentativas
+let mensagem = ""; // Mensagem que vai ser exibida
 
 function tentar() {
-  const numeroS = document.getElementById('numeroS');
-  const ns = Number(numeroS.value);
-  const res = document.getElementById('res');
-  const a = document.getElementById('voltar');
-  const input = document.getElementById('numeroS');
-  const btn = document.getElementById('tentar'); // const == var
+  const numeroS = document.getElementById('numeroS') // constante  (Constante serve para declarar uma variavel que não vai ter valor)
+  const ns = Number(numeroS.value)
+  const res = document.getElementById('res')
+  const a = document.getElementById('voltar')
+  const input = document.getElementById('numeroS')
+  const btn = document.getElementById('tentar')
 
   if (ns == 30) { 
     res.innerHTML = `<p>Você acertou o número secreto!</p>`
     document.body.style.background = '#343A40'
     a.innerText = 'Voltar para a página principal'
-    input.disabled = true;
-    btn.disabled = true;
+    input.disabled = true
+    btn.disabled = true
   } else if (ns > 30) {
     res.innerHTML = `<p>O número secreto é <strong>menor!</strong></p>`
     document.body.style.background = '#08090D'
-    tentativas++;
+    tentativas++
   } else if (ns < 30) {
     res.innerHTML = `<p>O número secreto é <strong>maior!</strong></p>`
     document.body.style.background = '#08090D'
-    tentativas++;
+    tentativas++
   } else {
     res.innerHTML += `<p>Número inválido!</p>`
     document.body.style.background = '#08090D'
